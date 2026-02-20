@@ -3,8 +3,8 @@ get_contents_ftp <- function(ftp_url) {
   my_html <- xml2::read_html(ftp_url)
 
   all_links <- my_html %>%
-    rvest::html_node('pre') %>%
-    rvest::html_nodes('a') %>%
+    rvest::html_element('pre') %>%
+    rvest::html_elements('a') %>%
     rvest::html_text()
 
   idx <- stringr::str_detect(

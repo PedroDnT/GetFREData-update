@@ -1,3 +1,14 @@
+## Version 0.9.1 (2026-02-20)
+
+### CI / Workflow
+
+- Updated `actions/checkout` from v2 to v4 in `R-CMD-check.yaml` (v2 is deprecated and may cause failures on newer GitHub Actions runners).
+
+### Bug fixes and improvements
+
+- Updated CVM data URLs from `http://` to `https://` in `fct_get_fre_links.R` and `fct_get_fre_data2.R`. The plain-HTTP endpoint now redirects to HTTPS, which can cause download failures in strict environments.
+- Replaced deprecated `rvest::html_node()` / `rvest::html_nodes()` with `rvest::html_element()` / `rvest::html_elements()` in `fct_get_fre_ftp_contents.R`.
+
 ## Version 0.9.0 (2025-04-10)
 
 - added new function get_fre_data2, which downloads data from CVM website (and not b3)
